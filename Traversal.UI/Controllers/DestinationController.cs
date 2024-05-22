@@ -1,6 +1,5 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EfCore;
-using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Traversal.UI.Controllers
@@ -17,14 +16,11 @@ namespace Traversal.UI.Controllers
         [HttpGet]
         public IActionResult DestinationDetails(int id)
         {
+            ViewBag.i = id;
             var detaildId = destinationManager.GetById(id);
             return View(detaildId);
         }
 
-        [HttpPost]
-        public IActionResult DestinationDetails(Destination destination)
-        {
-            return View();
-        }
+
     }
 }

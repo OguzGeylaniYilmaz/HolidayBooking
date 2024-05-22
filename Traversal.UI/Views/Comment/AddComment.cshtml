@@ -1,0 +1,27 @@
+﻿@model Comment
+
+<div class="leave-comment-form mt-5" id="reply">
+    <h4 class="side-title mb-2">Leave a Reply</h4>
+    <p class="mb-4">
+        Your email address will not be published. Required fields are marked *
+    </p>
+    <form method="post" asp-controller="Comment" asp-action="AddComment">
+
+        <div class="form-group">
+            <textarea asp-for="Content" class="form-control" placeholder="Your Comment*"
+                      spellcheck="false"></textarea>
+        </div>
+        <div class="input-grids row">
+            <div class="form-group col-lg-6">
+                <input type="text" asp-for="User" class="form-control" placeholder="Your Name*" />
+            </div>
+            <div class="form-group col-lg-6">
+                <input type="text" asp-for="DestinationID" class="form-control" placeholder="ID*">
+            </div>
+        </div>
+
+        <div class="submit text-right"> 
+            <button class="btn btn-style btn-primary">Post Comment </button>
+        </div>
+    </form>
+</div>
