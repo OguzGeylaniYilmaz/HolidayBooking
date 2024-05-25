@@ -19,5 +19,6 @@ namespace EntityLayer.Concrete
         public int Capacity { get; set; }
         public bool Status { get; set; }
         public List<Comment> Comments { get; set; }
+        public List<Reservation> Reservations { get; set; }
     }
 }

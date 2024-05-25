@@ -1,0 +1,32 @@
+﻿@model UserEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<form method="post" class="form-group" asp-action="Index" enctype="multipart/form-data">
+    <label>Name</label>
+    <input type="text" class="form-control" asp-for="Name" />
+    <br />
+    <label>Surname</label>
+    <input type="text" class="form-control" asp-for="Surname" />
+    <br />
+    <label>Phone Number</label>
+    <input type="text" class="form-control" asp-for="PhoneNumber" />
+    <br />
+    <label>Mail</label>
+    <input type="email" class="form-control" asp-for="Mail" />
+    <br />
+    <label>Password</label>
+    <input type="password" class="form-control" asp-for="Password" />
+    <br />
+    <label>Confirm Password</label>
+    <input type="password" class="form-control" asp-for="ConfirmPassword" />
+    <br />
+    <label>Choose an Image</label>
+    <br />
+    <input type="file" asp-for="Image" class="form-control" />
+    <br />
+    <br />
+    <button class="btn btn-info ">Save</button>
+</form>

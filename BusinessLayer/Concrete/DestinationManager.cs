@@ -1,7 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
-using System;
 using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
@@ -17,12 +16,12 @@ namespace BusinessLayer.Concrete
 
         public void Add(Destination entity)
         {
-            throw new NotImplementedException();
+            _destinationDal.Insert(entity);
         }
 
         public void Edit(Destination entity)
         {
-            throw new NotImplementedException();
+            _destinationDal.Update(entity);
         }
 
         public List<Destination> GetAll()
@@ -37,7 +36,7 @@ namespace BusinessLayer.Concrete
 
         public void Remove(Destination entity)
         {
-            throw new NotImplementedException();
+            _destinationDal.Delete(entity);
         }
     }
 }

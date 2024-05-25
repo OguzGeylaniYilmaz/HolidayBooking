@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace BusinessLayer.Abstract
 {
@@ -9,5 +11,6 @@ namespace BusinessLayer.Abstract
         void Edit(T entity);
         List<T> GetAll();
         T GetById(int id);
+      
     }
 }

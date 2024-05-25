@@ -1,0 +1,37 @@
+﻿@model List<Reservation>
+@{
+    ViewData["Title"] = "PreviousReservations";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1 style="text-align:center">My Previous Reservations</h1>
+<br />
+@if(!Model.Any())
+{
+    <span class="text-danger">There is no Previous Reservations</span>
+}
+else
+{
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>Destination</th>
+            <th>Person Count</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.ReservationID</th>
+                <th>@item.Destination.City</th>
+                <td>@item.PersonCount</td>
+                <td>@item.Date.ToShortDateString()</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </table>
+}
+
+
+

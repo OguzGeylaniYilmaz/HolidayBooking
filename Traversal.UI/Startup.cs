@@ -1,4 +1,6 @@
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
+using DataAccessLayer.EfCore;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -26,6 +28,8 @@ namespace Traversal.UI
 			services.AddDbContext<Context>();
 			services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 			services.AddControllersWithViews();
+			services.AddScoped<IReservationDal,EfReservationDal>();
+			services.AddScoped<IDestinationDal,EfDestinationDal>();
 
 			services.AddMvc(config =>
 			{

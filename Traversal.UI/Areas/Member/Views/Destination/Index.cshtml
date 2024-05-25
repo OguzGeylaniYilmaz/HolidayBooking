@@ -1,0 +1,29 @@
+﻿@model List<Destination>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2 style="text-align:center">Current Tour Destinations</h2>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>City</th>
+        <th>Time</th>
+        <th>Capacity</th>
+        <th>Price</th>
+        <th>Details</th>
+    </tr>
+    @foreach (var item in Model)
+    {   
+        <tr>
+            <td>@item.DestinationID</td>
+            <td>@item.City</td>
+            <td>@item.DayNight</td>
+            <td>@item.Capacity</td>
+            <td>@item.Price</td>
+            <td><a href="#" class="btn btn-primary">Details</a></td>
+        </tr>
+    }
+</table>

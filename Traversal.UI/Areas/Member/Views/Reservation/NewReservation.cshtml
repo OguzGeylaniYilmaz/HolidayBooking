@@ -1,0 +1,30 @@
+﻿@model Reservation
+@{
+    ViewData["Title"] = "NewReservation";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h3 style="text-align:center">New Reservation Page</h3>
+<br />
+<form method="post">
+ @*    <div class="form-group">
+        <label>Location</label>
+        @Html.DropDownListFor(x => x.Destination, (List<SelectListItem>)ViewBag.data, new { @class = "form-control" })
+    </div> *@
+    <div class="form-group">
+        <label>Person Count</label>
+        <input type="text" asp-for="PersonCount" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="date" asp-for="Date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea asp-for="Description" cols="4" rows="3" class="form-control">
+
+        </textarea>
+    </div>
+    <br />
+    <button class="btn btn-warning">Make Reservation</button>
+</form>
