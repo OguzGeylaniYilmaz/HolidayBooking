@@ -3,7 +3,6 @@ using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
 
 namespace BusinessLayer.Concrete
 {
@@ -18,12 +17,12 @@ namespace BusinessLayer.Concrete
 
         public void Add(Guide entity)
         {
-            throw new NotImplementedException();
+            _guideDal.Insert(entity);
         }
 
         public void Edit(Guide entity)
         {
-            throw new NotImplementedException();
+           _guideDal.Update(entity);
         }
 
         public List<Guide> GetAll()
@@ -33,7 +32,7 @@ namespace BusinessLayer.Concrete
 
         public Guide GetById(int id)
         {
-            throw new NotImplementedException();
+            return _guideDal.Get(id);
         }
 
         public void Remove(Guide entity)

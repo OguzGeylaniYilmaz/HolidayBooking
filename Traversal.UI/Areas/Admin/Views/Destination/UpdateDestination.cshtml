@@ -1,0 +1,37 @@
+﻿@model Destination
+@{
+    ViewData["Title"] = "UpdateDestination";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="DestinationID" />
+    <label>City</label>
+    <input type="text" class="form-control" asp-for="City" />
+    <br />
+    <label>Day&Night</label>
+    <input type="text" class="form-control" asp-for="DayNight" />
+    <br />
+    <label>Price</label>
+    <input type="text" class="form-control" asp-for="Price" />
+    <br />
+    <label>Capacity</label>
+    <input type="text" class="form-control" asp-for="Capacity" />
+    <br />
+    <label>Image</label>
+    <input type="text" class="form-control" asp-for="Image" />
+    <br />
+    <label>Image 2</label>
+    <input type="text" class="form-control" asp-for="Image2" />
+    <br />
+    <label>Short Detail</label>
+    <textarea asp-for="ShortDetail" cols="5" rows="4" class="form-control"></textarea>
+    <br />
+    <label>Long Detail</label>
+    <textarea asp-for="LongDetail" cols="5" rows="4" class="form-control"></textarea>
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>
+
+
+

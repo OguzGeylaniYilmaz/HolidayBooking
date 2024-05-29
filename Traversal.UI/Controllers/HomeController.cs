@@ -1,15 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Traversal.UI.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
         {
-            return View();
+            _logger = logger;
         }
 
-
+        public IActionResult Index()
+        {
+            _logger.LogInformation("Log is working");
+            return View();
+        }
 
     }
 }

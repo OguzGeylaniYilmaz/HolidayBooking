@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
+﻿using System.Collections.Generic;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IGenericService<T>
+	public interface IGenericService<T>
     {
         void Add(T entity);
         void Remove(T entity);

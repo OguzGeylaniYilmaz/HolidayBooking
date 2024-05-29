@@ -1,5 +1,4 @@
-﻿using BusinessLayer.Concrete;
-using DataAccessLayer.EfCore;
+﻿using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,10 +7,16 @@ namespace Traversal.UI.Areas.Admin.Controllers
     [Area("Admin")]
     public class DestinationController : Controller
     {
-        DestinationManager destinationManager = new(new EfDestinationDal());
+        private readonly IDestinationService _destinationService;
+
+        public DestinationController(IDestinationService destinationService)
+        {
+            _destinationService = destinationService;
+        }
+
         public IActionResult Index()
         {
-            var values = destinationManager.GetAll();
+            var values =_destinationService.GetAll();
             return View(values);
         }
 
@@ -24,28 +29,28 @@ namespace Traversal.UI.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult AddDestination(Destination destination)
         {
-            destinationManager.Add(destination);
+            _destinationService.Add(destination);
             return RedirectToAction("Index");
         }
 
         [HttpGet]
         public IActionResult UpdateDestination(int id)
         {
-            var editedId = destinationManager.GetById(id);
+            var editedId = _destinationService.GetById(id);
             return View(editedId);
         }
 
         [HttpPost]
         public IActionResult UpdateDestination(Destination destination)
         {
-            destinationManager.Edit(destination);
-            return RedirectToAction("Index");
+            _destinationService.Edit(destination);
+            return RedirectToAction("Index", "Destination", new { area = "Admin" });
         }
 
         public IActionResult DeleteDestination(int id)
         {
-            var deletedId = destinationManager.GetById(id);
-            destinationManager.Remove(deletedId);
+            var deletedId = _destinationService.GetById(id);
+            _destinationService.Remove(deletedId);
             return RedirectToAction("Index");
         }
     }

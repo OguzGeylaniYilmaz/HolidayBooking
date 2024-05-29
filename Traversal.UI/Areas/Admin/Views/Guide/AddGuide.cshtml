@@ -1,0 +1,23 @@
+﻿@model Guide
+@{
+    ViewData["Title"] = "AddGuide";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="text-align:center">New Guide</h2>
+<br />
+<form method="post">
+    <label>Image</label>
+    <input  type="text" asp-for="Image" class="form-control"/>
+    <br />
+    <label>Name</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+    <label>Description</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+    <label>Instagram Url</label>
+    <input type="text" asp-for="InstagramUrl" class="form-control" />
+    <br />
+    <button class="btn btn-warning">Save</button>
+</form>

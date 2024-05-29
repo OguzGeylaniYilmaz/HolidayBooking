@@ -1,0 +1,28 @@
+﻿@model List<Comment>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>User</th>
+        <th>Destination</th>
+        <th>Date</th>
+        <th>Content</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CommentID</td>
+            <td>@item.User</td>
+            <td>@item.Destination.City</td>
+            <td>@item.Date.ToShortDateString()</td>
+            <td>@item.Content</td>
+            <td><a href="/Admin/Comment/DeleteComment/@item.CommentID" class="btn btn-outline-danger">Delete</a></td>
+        </tr>
+    }
+</table>

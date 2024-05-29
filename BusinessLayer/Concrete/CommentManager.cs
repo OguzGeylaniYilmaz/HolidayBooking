@@ -27,7 +27,7 @@ namespace BusinessLayer.Concrete
 
         public List<Comment> GetAll()
         {
-            throw new NotImplementedException();
+           return _commentDal.GetList();
         }
 
         public List<Comment> GetDestinationById(int id)
@@ -42,7 +42,12 @@ namespace BusinessLayer.Concrete
 
         public void Remove(Comment entity)
         {
-            throw new NotImplementedException();
+            _commentDal.Delete(entity);
+        }
+
+        public List<Comment> GetAllCommentsWithDestinations()
+        {
+            return _commentDal.GetCommentListWithDestination();
         }
     }
 }
