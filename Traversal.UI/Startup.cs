@@ -1,6 +1,7 @@
 using BusinessLayer.Container;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,8 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Serilog;
-using System.IO;
+using Traversal.UI.CQRS.Handlers.DestinationHandlers;
 using Traversal.UI.Models;
 
 namespace Traversal.UI
@@ -27,6 +27,8 @@ namespace Traversal.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<GetDestinationsQueryHandler>();
+
             //services.AddLogging(x =>
             //{
             //    x.ClearProviders();
@@ -35,13 +37,21 @@ namespace Traversal.UI
 
             //});
 
+
+
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
             services.AddControllersWithViews();
-            //services.AddScoped<IReservationDal,EfReservationDal>();
-            //services.AddScoped<IDestinationDal,EfDestinationDal>();
+
+            services.AddHttpClient();
 
             services.ContainerDependencies();
+            
+
+            services.AddAutoMapper(typeof(Startup));
+            services.CustomValidator();
+            services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
+    
 
 
             services.AddMvc(config =>

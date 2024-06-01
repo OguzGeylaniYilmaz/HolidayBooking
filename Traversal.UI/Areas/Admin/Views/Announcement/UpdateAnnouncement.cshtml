@@ -1,0 +1,20 @@
+﻿@model UpdateAnnouncementDto
+@{
+    ViewData["Title"] = "UpdateAnnouncement";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="text-align:center">Edit Announcement</h2>
+<br />
+<form method="post">
+    <input type="hidden" asp-for="AnnouncementID" />
+    <label>Title</label>
+    <input type="text" class="form-control" asp-for="Title" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+    <br />
+    <label>Content</label>
+    <input type="text" class="form-control" asp-for="Content" />
+    <span asp-validation-for="Content" class="text-danger"></span>
+    <br />
+    <button class="btn btn-success">Save</button>
+</form>

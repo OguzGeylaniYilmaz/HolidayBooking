@@ -1,7 +1,10 @@
 ﻿using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.EfCore;
+using DtoLayer.DTOs.AnnouncementDtos;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BusinessLayer.Container
@@ -20,6 +23,16 @@ namespace BusinessLayer.Container
             services.AddScoped<IReservationDal, EfReservationDal>();
 			services.AddScoped<IGuideService, GuideManager>();
 			services.AddScoped<IGuideDal, EfGuideDal>();
-		}
+            services.AddScoped<IContactUsService, ContactUsManager>();
+            services.AddScoped<IContactUsDal, EfContactUsDal>();
+            services.AddScoped<IAnnouncementService, AnnouncementManager>();
+            services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
+  
+        }
+
+        public static void CustomValidator(this IServiceCollection services)
+        {
+            services.AddTransient<IValidator<AddAnnouncementDto>, AnnouncementValidator>();
+        }
     }
 }

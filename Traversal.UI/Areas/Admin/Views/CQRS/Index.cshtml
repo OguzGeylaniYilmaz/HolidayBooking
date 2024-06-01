@@ -1,0 +1,31 @@
+﻿@model List<GetDestinationsQueryResult>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>CQRS</h1>
+<br />
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>City</th>
+        <th>Day&Night</th>
+        <th>Price</th>
+        <th>Capacity</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.city</td>
+            <td>@item.daynight</td>
+            <td>@item.price</td>
+            <td>@item.capacity</td>
+            <td><a href="" class="btn btn-outline-info">Edit</a></td>
+            <td><a href="" class="btn btn-outline-danger">Delete</a></td>
+        </tr>      
+    }
+</table>

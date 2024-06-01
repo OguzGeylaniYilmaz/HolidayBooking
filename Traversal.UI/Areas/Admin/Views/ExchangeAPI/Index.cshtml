@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ExchangeApiViewModel.Exchange_Rates>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>Currency</th>
+        <th>Exchange Rate</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.currency</td>
+            <td>@item.exchange_rate_buy</td>
+        </tr>
+    }
+</table>
+
