@@ -1,4 +1,4 @@
-﻿namespace Traversal.UI.CQRS.Results.DestinationResult
+﻿namespace Traversal.UI.CQRS.Results.DestinationResults
 {
     public class GetDestinationsQueryResult
     {

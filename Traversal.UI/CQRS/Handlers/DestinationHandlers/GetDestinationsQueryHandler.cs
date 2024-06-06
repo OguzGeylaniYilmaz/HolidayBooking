@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using Traversal.UI.CQRS.Results.DestinationResult;
+using Traversal.UI.CQRS.Results.DestinationResults;
 
 namespace Traversal.UI.CQRS.Handlers.DestinationHandlers
 {

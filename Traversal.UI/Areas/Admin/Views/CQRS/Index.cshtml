@@ -4,8 +4,6 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>CQRS</h1>
-<br />
 <table class="table table-striped">
     <tr>
         <th>#</th>
@@ -24,8 +22,10 @@
             <td>@item.daynight</td>
             <td>@item.price</td>
             <td>@item.capacity</td>
-            <td><a href="" class="btn btn-outline-info">Edit</a></td>
-            <td><a href="" class="btn btn-outline-danger">Delete</a></td>
+            <td><a href="/Admin/CQRS/GetDestination/@item.id/" class="btn btn-outline-info">Edit</a></td>
+            <td><a href="/Admin/CQRS/DeleteDestination/@item.id/" class="btn btn-outline-danger">Delete</a></td>
         </tr>      
     }
 </table>
+<br />
+<a href="/Admin/CQRS/AddDestination/" class="btn btn-success">New Destination</a>

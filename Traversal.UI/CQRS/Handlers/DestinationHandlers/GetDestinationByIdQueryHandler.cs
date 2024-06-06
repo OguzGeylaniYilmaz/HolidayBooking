@@ -1,8 +1,6 @@
 ﻿using DataAccessLayer.Concrete;
-using DocumentFormat.OpenXml.Wordprocessing;
-using Microsoft.AspNetCore.Mvc;
 using Traversal.UI.CQRS.Queries.DestinationQueries;
-using Traversal.UI.CQRS.Results.DestinationResult;
+using Traversal.UI.CQRS.Results.DestinationResults;
 
 namespace Traversal.UI.CQRS.Handlers.DestinationHandlers
 {
@@ -23,6 +21,7 @@ namespace Traversal.UI.CQRS.Handlers.DestinationHandlers
                 DestinationID = values.DestinationID,
                 City = values.City,
                 DayNight = values.DayNight,
+                Price = values.Price
             };
         }
 
