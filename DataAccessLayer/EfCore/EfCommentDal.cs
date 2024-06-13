@@ -17,5 +17,13 @@ namespace DataAccessLayer.EfCore
                 return context.Comments.Include(x => x.Destination).ToList();
             }
         }
+
+        public List<Comment> GetCommentsWithUser(int id)
+        {
+            using (var context = new Context())
+            {
+                return context.Comments.Where(x=>x.DestinationID.Equals(id)).Include(x => x.AppUser).ToList();
+            }
+        }
     }
 }

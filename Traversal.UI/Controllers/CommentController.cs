@@ -10,6 +10,7 @@ namespace Traversal.UI.Controllers
     {
         CommentManager commentManager = new(new EfCommentDal());
 
+
         [HttpGet]
         public PartialViewResult AddComment()
         {
@@ -19,10 +20,9 @@ namespace Traversal.UI.Controllers
         [HttpPost]
         public IActionResult AddComment(Comment comment)
         {
-            //comment.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            //comment.Status = true;
-            //comment.DestinationID = 1;
-            //commentManager.Add(comment);
+            comment.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            comment.Status = true;;
+            commentManager.Add(comment);
             return RedirectToAction("DestinationDetails", "Destination");
         }
     }

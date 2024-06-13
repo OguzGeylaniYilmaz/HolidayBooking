@@ -6,5 +6,6 @@ namespace BusinessLayer.Abstract
     public interface ICommentService : IGenericService<Comment>
     {
         List<Comment> GetAllCommentsWithDestinations();
+        List<Comment> GetCommentListWithUser(int id);
     }
 }
