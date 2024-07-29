@@ -17,7 +17,7 @@ namespace BusinessLayer.Concrete
 
         public void Add(ContactUs entity)
         {
-            throw new NotImplementedException();
+            _contactUsDal.Insert(entity);
         }
 
         public void Edit(ContactUs entity)

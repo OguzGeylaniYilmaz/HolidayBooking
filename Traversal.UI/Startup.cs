@@ -53,12 +53,12 @@ namespace Traversal.UI
             services.AddHttpClient();
 
             services.ContainerDependencies();
-            
+
 
             services.AddAutoMapper(typeof(Startup));
             services.CustomValidator();
             services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
-    
+
 
 
             services.AddMvc(config =>
@@ -67,6 +67,11 @@ namespace Traversal.UI
                 .RequireAuthenticatedUser()
                 .Build();
                 config.Filters.Add(new AuthorizeFilter(policy));
+            });
+
+            services.ConfigureApplicationCookie(opt =>
+            {
+                opt.LoginPath = "/Login/SignIn";
             });
 
 

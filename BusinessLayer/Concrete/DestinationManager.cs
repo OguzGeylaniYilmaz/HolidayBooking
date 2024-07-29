@@ -34,6 +34,11 @@ namespace BusinessLayer.Concrete
             return _destinationDal.Get(id);
         }
 
+        public Destination GetDestinationWithGuide(int id)
+        {
+            return _destinationDal.GetDestinationWithGuide(id);
+        }
+
         public void Remove(Destination entity)
         {
             _destinationDal.Delete(entity);

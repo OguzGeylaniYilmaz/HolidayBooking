@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DtoLayer", "DtoLayer\DtoLayer.csproj", "{107E1C90-EC19-443E-82E1-A610034034E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Traversal.API", "Traversal.API\Traversal.API.csproj", "{DFA9DFAF-A5EA-4E21-AC52-E78D0F200554}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Traversal.API", "Traversal.API\Traversal.API.csproj", "{DFA9DFAF-A5EA-4E21-AC52-E78D0F200554}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
